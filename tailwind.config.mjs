@@ -18,4 +18,8 @@ export default {
 			"article-size": "1028px",
 		},
 	},
+	plugins: [
+		require("@tailwindcss/typography"),
+		// ...
+	],
 };
