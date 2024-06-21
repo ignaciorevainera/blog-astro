@@ -1,0 +1,46 @@
+---
+import Date from "@/components/blog/Date.astro";
+
+import { type CollectionEntry } from "astro:content";
+type props = CollectionEntry<"blog">["data"];
+
+const { image, title, author, date, tags } = Astro.props;
+---
+
+<li
+	class="rounded-xl border border-extra-soft-white text-soft-white transition-colors duration-200 hover:bg-soft-light"
+>
+	<div>
+		<article>
+			<a>
+				<img
+					src={image}
+					alt={image}
+					width="1020"
+					height="520"
+					class="aspect-[16/5] rounded-t-xl object-cover"
+				/>
+				<div class="w-full">
+					<div class="flex flex-col px-12 py-4">
+						<h4 class="text-3xl font-bold">
+							{title}
+						</h4>
+						<h5 class="text-md font-thin">
+							{author}
+						</h5>
+						<div class="flex gap-2">
+							{
+								tags.map((tag: String) => (
+									<span class="mt-4 self-start rounded border border-extra-soft-white px-2 py-1 text-zinc-400">
+										{tag}
+									</span>
+								))
+							}
+						</div>
+						<Date date={date} />
+					</div>
+				</div>
+			</a>
+		</article>
+	</div>
+</li>

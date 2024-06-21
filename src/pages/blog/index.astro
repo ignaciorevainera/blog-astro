@@ -1,8 +1,25 @@
 ---
 import Layout from "@/layouts/Layout.astro";
+import Article from "@/components/blog/Article.astro";
 const title = "Bienvenido a mi blog";
+
+import { getCollection } from "astro:content";
+const posts = (await getCollection("blog")).sort(
+	(a, b) => b.data.date.valueOf() - a.data.date.valueOf()
+);
+
+console.log(posts);
 ---
 
 <Layout title={title}>
 	<h1>Página principal del blog</h1>
+	<a href="/">Vuelve al inicio</a>
+
+	<div class="mx-auto w-full max-w-content-size">
+		<section class="mt-6 w-full">
+			<ul class="space-y-8">
+				{posts.map((post) => <Article {...post.data} />)}
+			</ul>
+		</section>
+	</div>
 </Layout>
