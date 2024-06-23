@@ -1,0 +1,33 @@
+---
+import { getAllTags } from "@/utils/getAllTags";
+const tags = await getAllTags();
+import { Icon } from "astro-icon/components";
+import Tag from "./blog/Tag.astro";
+---
+
+<div class="flex gap-2">
+	<button
+		id="opener"
+		class="grid size-12 place-items-center rounded-xl border border-zinc-700"
+	>
+		<Icon name="lucide:filter" class="text-white" size={24} />
+	</button>
+	<div
+		id="selector"
+		class="flex items-center gap-2 opacity-0 transition-opacity duration-300 ease-in-out"
+	>
+		{
+			tags.map((tag) => (
+				<a class="group" href={`/blog/tag/${tag.toLowerCase()}`}>
+					<Tag>{tag}</Tag>
+				</a>
+			))
+		}
+	</div>
+</div>
+<script data-astro-rerun>
+	document.getElementById("opener")?.addEventListener("click", () => {
+		const selector = document.getElementById("selector");
+		selector?.classList.toggle("opacity-0");
+	});
+</script>

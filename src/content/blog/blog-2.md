@@ -2,7 +2,7 @@
 image: "/assets/blog/blog-placeholder-2.webp"
 title: "My second post"
 author: "Ignacio Revainera"
-date: "Jul 22 2024"
+pubDate: "Jul 22 2024"
 tags: ["VS Code", "Astro"]
 ---
 

@@ -2,7 +2,7 @@
 image: "/assets/blog/blog-placeholder-1.webp"
 title: "My first post"
 author: "Ignacio Revainera"
-date: "Jul 08 2024"
+pubDate: "Jul 08 2024"
 tags: ["AI", "Development"]
 ---
 

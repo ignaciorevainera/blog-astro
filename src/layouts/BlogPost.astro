@@ -3,8 +3,8 @@ import MainLayout from "./MainLayout.astro";
 import Date from "@/components/blog/Date.astro";
 import { Image } from "astro:assets";
 import { type CollectionEntry } from "astro:content";
-type props = CollectionEntry<"blog">["data"];
-const { image, title, author, date, tags } = Astro.props;
+type Props = CollectionEntry<"blog">["data"];
+const { image, title, author, pubDate } = Astro.props;
 ---
 
 <MainLayout title={title}>
@@ -41,7 +41,7 @@ const { image, title, author, date, tags } = Astro.props;
 				<div
 					class="prose prose-zinc prose-invert min-w-full px-12 py-12 lg:prose-xl"
 				>
-					<Date date={date} />
+					<Date pubDate={pubDate} />
 
 					<h1>{title}</h1>
 					<small>{author}</small>
