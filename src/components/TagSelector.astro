@@ -25,7 +25,7 @@ import Tag from "./blog/Tag.astro";
 		}
 	</div>
 </div>
-<script data-astro-rerun>
+<script data-astro-rerun is:inline>
 	document.getElementById("opener")?.addEventListener("click", () => {
 		const selector = document.getElementById("selector");
 		selector?.classList.toggle("opacity-0");
