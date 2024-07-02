@@ -22,7 +22,7 @@ export default defineConfig({
 		sitemap(),
 		icon({
 			include: {
-				lucide: ["filter"],
+				lucide: ["*"],
 			},
 		}),
 	],
